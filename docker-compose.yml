@@ -2,11 +2,10 @@ version: "3.4"
 
 services:
     app:
-        image: unafraid.dev/dedicated-servers/satisfactory:v2
+        image: unafraid/satisfactory:latest
         container_name: satisfactory
         restart: unless-stopped
         environment:
-          - TERM=xterm
           - PUID=1000
           - PGID=1000
           - TZ=Europe/Sofia
