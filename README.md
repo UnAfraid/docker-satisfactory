@@ -1,4 +1,4 @@
-This is [Satisfactory](https://www.satisfactorygame.com/) [Dedicated Server](https://satisfactory.fandom.com/wiki/Dedicated_servers) containerized.
+This is [Satisfactory](https://www.satisfactorygame.com/) Game [Dedicated Server](https://satisfactory.fandom.com/wiki/Dedicated_servers) containerized.
 
 
 ## Usage
