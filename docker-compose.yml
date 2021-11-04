@@ -15,4 +15,4 @@ services:
           - "7777:7777/udp"
         volumes:
             - ./save:/config/.config/Epic
-            - ./config:/app/SatisfactoryDedicatedServer/FactoryGame/Saved/
+            - ./server:/app/SatisfactoryDedicatedServer
