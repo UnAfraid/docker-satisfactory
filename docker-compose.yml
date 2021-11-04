@@ -1,0 +1,19 @@
+version: "3.4"
+
+services:
+    app:
+        image: unafraid.dev/dedicated-servers/satisfactory:v2
+        container_name: satisfactory
+        restart: unless-stopped
+        environment:
+          - TERM=xterm
+          - PUID=1000
+          - PGID=1000
+          - TZ=Europe/Sofia
+        ports:
+          - "15777:15777/udp"
+          - "15000:15000/udp"
+          - "7777:7777/udp"
+        volumes:
+            - ./save:/config/.config/Epic
+            - ./config:/app/SatisfactoryDedicatedServer/FactoryGame/Saved/

@@ -1,0 +1,22 @@
+#!/usr/bin/with-contenv bash
+
+export INSTALLATION_DIR=/app/SatisfactoryDedicatedServer
+export TEMP_LD_PATH="${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="${INSTALLATION_DIR}/linux64:${LD_LIBRARY_PATH}"
+
+if [ -n "${UMASK_SET}" ] && [ -z "${UMASK}" ]; then
+    echo -e "You are using a legacy method of defining umask\nplease update your environment variable from UMASK_SET to UMASK\nto keep the functionality after July 2021"
+    umask ${UMASK_SET}
+fi
+
+cd $INSTALLATION_DIR || exit
+
+export HOME="/config"
+
+exec \
+    s6-setuidgid abc "${INSTALLATION_DIR}/FactoryServer.sh" \
+	-NoSteamClient \
+	-unattended \
+	-multihome=0.0.0.0
+	
+export LD_LIBRARY_PATH="${TEMP_LD_PATH}"
